@@ -9,16 +9,16 @@ function EmployeeDashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/getAll")
+      .get("https://employee-crud1.onrender.com/getAll")
       .then((response) => setEmployees(response.data))
       .catch(() => console.log("Something went wrong"));
   }, []);
 
   const deleteEmployee = (id) => {
-    //http://localhost:8080/delete?id=1
+    //https://employee-crud1.onrender.com/delete?id=1
 
     axios
-      .delete(`http://localhost:8080/delete?id=${id}`)
+      .delete("https://employee-crud1.onrender.com?id=${id}")
       .then((response) => {
         if (response.data === true) {
           alert("deleted");
